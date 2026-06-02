@@ -1,5 +1,5 @@
 # Digital Pathology AI for Morphological Biomarker Discovery: Tracing CLDN18.2 Expression to Optimize VYLOY Treatment Strategies in Gastric Cancer
-Introduction
+## Introduction
 
 Gastric cancer remains one of the leading causes of cancer-related mortality worldwide, despite recent advances in targeted therapeutics and precision oncology. Among emerging targeted treatments, VYLOY has demonstrated promising clinical outcomes for patients with CLDN18.2-positive gastric tumors. However, current clinical workflows rely heavily on immunohistochemistry (IHC) staining platforms such as Ventana Medical Systems to identify CLDN18.2 expression, which introduces additional cost, processing time, and dependency on specialized pathology infrastructure. Furthermore, existing digital pathology studies primarily focus on statistical correlations between hematoxylin and eosin (H&E) slides and clinical outcomes, often without explicitly modeling the underlying biological mechanisms associated with biomarker expression.
 
@@ -7,7 +7,7 @@ This research proposes a next-generation Digital Pathology AI framework that dir
 
 Unlike conventional patch-level classification approaches, this study focuses on spatial biomarker tracing through cell-centered graph representations and topology-aware modeling. The proposed framework analyzes not only the presence of CLDN18.2-positive regions but also their density, spatial distribution, clustering behavior, glandular organization, and microenvironmental relationships across entire whole-slide images. Such spatial heterogeneity may provide clinically meaningful information regarding treatment response and therapeutic optimization for VYLOY administration. Ultimately, this work seeks to establish a biologically informed precision oncology framework that bridges digital pathology, morphology-aware artificial intelligence, and targeted treatment strategy modeling.
 
-Methodologies
+## Methodologies
 
 The proposed framework begins with whole-slide images acquired from Ventana iSyntax digital pathology systems containing paired CLDN18.2-positive and negative gastric cancer slides. The iSyntax files are converted into multi-resolution Zarr representations to enable scalable high-resolution analysis. Tissue segmentation is then performed to remove background regions and artifacts, followed by quality control procedures that eliminate blurry or low-information regions. To capture cellular-level morphology, HoverNet is employed for nuclei segmentation and localization, enabling the extraction of cell-centered image patches at multiple spatial scales.
 
@@ -15,6 +15,10 @@ To prevent the artificial intelligence model from learning shortcut features ass
 
 The constructed cell graphs are analyzed using Graph Neural Networks (GNNs) and Graph Transformers to learn CLDN18.2-associated spatial biomarker topology. Rather than predicting binary labels alone, the proposed models aim to trace biomarker density, spatial heterogeneity, glandular aggregation, tumor-edge localization, and cellular neighborhood interactions throughout the tissue. The learned representations are further utilized to generate virtual biomarker heatmaps that visualize predicted CLDN18.2 expression patterns across whole-slide images. Finally, the extracted spatial biomarker characteristics are correlated with VYLOY treatment strategies to investigate how morphology-driven biomarker organization may support therapeutic decision-making, treatment timing optimization, and precision oncology workflows.
 
+## Output
+<img width="1102" height="638" alt="cldn_output" src="https://github.com/user-attachments/assets/eafd462d-28f8-4de0-b71d-8339be40dece" />
+
+<!--
 # Pipeline
 1. convert_isyntax_to_zarr.py
    
@@ -75,6 +79,7 @@ The constructed cell graphs are analyzed using Graph Neural Networks (GNNs) and 
   --tile-size 518 \
   --batch-size 32 \
   --num-workers 0
+-->
 
 
 *Sponsored by GensionBio*
