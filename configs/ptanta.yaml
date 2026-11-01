@@ -1,0 +1,30 @@
+# Run from the repository root; use a new output_root for changed settings.
+study: outputs/data
+output_root: outputs/ptanta
+seeds: [17, 29, 43]
+training:
+  encoder: dinov2
+  model-name: dinov2_vitb14_reg
+  dinov2-repo: vendor/dinov2
+  encoder-weights: models/dinov2_vitb14_reg4_pretrain.pth
+  initialization: pretrained
+  epochs: 20
+  patience: 5
+  batch-size: 256
+  num-workers: 2
+  cpu-threads: 1
+  precision: bf16
+  backbone-lr: 0.00001
+  head-lr: 0.00005
+  weight-decay: 0.05
+prototype:
+  mode: self
+  tau: 0.8
+  beta: 1.0
+  min-anchors: 10
+  region-gap: 0
+  positive-threshold: 0.5
+  negative-threshold: 0.5
+models:
+  - name: dinov2_finetuned
+    arguments: {}

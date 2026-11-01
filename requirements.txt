@@ -1,0 +1,8 @@
+# Install a matching torch/torchvision pair separately for your CUDA environment.
+numpy>=1.26,<3
+pandas>=2.2,<3
+Pillow>=10,<13
+scikit-learn>=1.4,<2
+matplotlib>=3.8,<4
+PyYAML>=6,<7
+tqdm>=4.66,<5
