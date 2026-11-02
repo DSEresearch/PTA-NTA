@@ -78,17 +78,11 @@ precision (AP), plus patient-paired guidance differences.
 | figures/nta_curves.png | NTA ROC and precision-recall curves |
 | figures/guidance_difference.png | NTA guidance effect |
 
-[Methods and metric definitions](docs/METHODS.md) explain targets, prototype
-fallback, patient grouping and interpretation. No slide-level clinical endpoint
-or treatment-selection claim is made.
-
 ## Files
 
 - scripts/: prepare_data.py, train.py, evaluate.py, run.py, summarize.py, plot.py,
   and the shared ptanta.py module.
 - configs/ptanta.yaml: the final training and prototype settings.
-- docs/: input schema and methods only.
-- results/: PTA-NTA aggregate CSVs and three charts.
 - tests/: focused unit tests and one synthetic end-to-end test.
 
 ~~~bash
